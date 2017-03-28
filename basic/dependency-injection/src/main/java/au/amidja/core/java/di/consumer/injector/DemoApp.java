@@ -5,8 +5,8 @@ import au.amidja.core.di.consumer.Consumer;
 public class DemoApp {
 	
 	public static void main(String[] args) {
-		String msg = "Hi Pankaj";
-		String email = "pankaj@abc.com";
+		String msg = "Hi Bobo";
+		String email = "boboj@abc.com";
 		String phone = "4088888888";
 		
 		MessageServiceInjector injector = null;
