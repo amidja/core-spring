@@ -8,5 +8,4 @@ public class DefaultEnvironment implements Environment{
 	public Date getCurrentDate() {
 		return new Date();
 	}
-
 }

@@ -18,6 +18,7 @@ public class BaseDIConfiguration {
 	@Bean
 	public MessageConsumer getMessageConsumer(){
 		return new MessageConsumer();
+		
 	}
 			
 	

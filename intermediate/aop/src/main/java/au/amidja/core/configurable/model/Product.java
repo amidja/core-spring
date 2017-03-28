@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-
 public class Product {
 
 	private final String name;
@@ -12,6 +11,7 @@ public class Product {
 	private final Date createDate;
 	private Status status;
 	private Date saleDate;
+	
 	@Autowired
 	private Environment environment;
 

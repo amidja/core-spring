@@ -34,7 +34,7 @@ public class MessageServiceInjectorTest {
 	@Test
 	public void test() {
 		Consumer consumer = injector.getConsumer();
-		consumer.processMessage("Hi Pankaj", "pankaj@abc.com");
+		consumer.processMessage("Hi Bobo", "bobo@abc.com");
 	}
 
 	@After
