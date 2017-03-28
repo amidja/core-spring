@@ -5,9 +5,24 @@
 	<h1>Title : ${title}</h1>
 	<h1>Message : ${message}</h1>
 
+	<c:url value="/logout" var="logoutUrl" />
+
+	<!-- csrt for log out-->
+	<formid="logoutForm" action="${logoutUrl}" method="post" >
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	</form>
+
 	<c:if test="${pageContext.request.userPrincipal.name != null}">
-	   <h2>Welcome : ${pageContext.request.userPrincipal.name}
-           | <a href="<c:url value="/j_spring_security_logout" />" > Logout</a></h2>
+		<h2>
+			Welcome : ${pageContext.request.userPrincipal.name} | <a
+				href="javascript:formSubmit()"> Logout</a>
+		</h2>
 	</c:if>
+
+	<script>
+		function formSubmit() {
+			document.getElementById("logoutForm").submit();
+		}
+	</script>
 </body>
 </html>

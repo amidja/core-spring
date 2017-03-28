@@ -8,10 +8,29 @@
            http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
 
-	<security:http use-expressions="false">
-		<security:intercept-url pattern="/admin**" access="ROLE_USER" />
-		<security:http-basic />
+	
+	<security:http auto-config="true">
+		<security:intercept-url pattern="/admin**" access="hasRole('ROLE_USER')" />
+						
+		<security:form-login
+		    login-page="/login"
+		    default-target-url="/welcome"
+			authentication-failure-url="/login?error"
+			username-parameter="username"
+			password-parameter="password" />
+		
+		<security:logout logout-success-url="/login?logout" />
+								
 	</security:http>
+	 
+	
+	<!-- Using Spring's Default Login Page -->
+	<!-- 
+	<security:http auto-config="true">
+		<security:intercept-url pattern="/admin**" access="hasRole('ROLE_USER')" />		
+		<security:form-login/>		
+	</security:http>
+	 -->	
 	
 	<!-- Define local authentication provider, a real app would use an external 
 		provider (JDBC, LDAP, CAS, etc) usernames/passwords are: keith/melbourne 
@@ -19,10 +38,11 @@
 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:user-service>
-				<security:user name="amidja" password="amidja"
-					authorities="ROLE_USER, ROLE_APPLE_USER" />
+				<security:user name="amidja" password="amidja" authorities="ROLE_USER, ROLE_APPLE_USER" />
 			</security:user-service>
 		</security:authentication-provider>
 	</security:authentication-manager>
+	
+	
 
 </beans>
