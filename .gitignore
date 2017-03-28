@@ -9,6 +9,6 @@
 target/
 
 .settings/
-
+.classpath
 
 
