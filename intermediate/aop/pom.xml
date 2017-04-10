@@ -9,7 +9,7 @@
     	<relativePath>../pom.xml</relativePath>
   	</parent>
 
-	<artifactId>aop</artifactId>	
+	<artifactId>intermediate-aop</artifactId>	
 	<packaging>jar</packaging>
 	<name>Spring Intermediate - OAP</name>
 	

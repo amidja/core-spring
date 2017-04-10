@@ -11,5 +11,7 @@
 	<context:component-scan base-package="au.amidja.core.spring.di.consumer" />
 
 	<bean id="twitterSvc" class="au.amidja.core.di.service.TwitterServiceImpl"></bean>
+	
+	<bean id="emailSvc" class="au.amidja.core.di.service.EmailServiceImpl"></bean>	
 
 </beans>

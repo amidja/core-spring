@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import junit.framework.Assert;
 
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/testAppContext.xml")
 public class ProductTest {
@@ -23,7 +25,6 @@ public class ProductTest {
 
 	@Before
 	public void before() {
-
 		((MockEnvironment) this.environment).setCurrentDate(time);
 	}
 

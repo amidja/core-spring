@@ -13,7 +13,7 @@ Migration from Spring Security 3 to Spring Security 4:
 
 
 
-Run: mvn tomcat7:run
+Run: mvn clean install tomcat7:run
 	> http://localhost:8080/basic-security/
 
 URLs: 
@@ -21,4 +21,6 @@ URLs:
 	http://localhost:8080/basic-security/echo
 	http://localhost:8080/basic-security/welcome
 
-	proteced url: http://localhost:8080/basic-security/admin
+
+(&(secSelfAlias=cmvs.dva.gov.au*)(accountStatus=ACTIVE)(pwdLastLogonDate>20160101000000Z)(!(hubAcctRecoveryEmail=*)))
+

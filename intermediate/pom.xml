@@ -18,7 +18,8 @@
 	</properties>
 	
 	<modules>
-		<module>aop</module>		
+		<module>aop</module>
+		<module>security</module>
 	</modules>	
 	
 	<repositories>
@@ -87,7 +88,14 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>													
+			</plugin>		
+
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.0</version>
+			</plugin>
+														
 		</plugins>
 		
 	</build>
