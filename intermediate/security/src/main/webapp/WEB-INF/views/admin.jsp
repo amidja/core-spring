@@ -17,6 +17,7 @@
 			Welcome : ${pageContext.request.userPrincipal.name} | <a
 				href="javascript:formSubmit()"> Logout</a>
 		</h2>
+		
 	</c:if>
 
 	<script>

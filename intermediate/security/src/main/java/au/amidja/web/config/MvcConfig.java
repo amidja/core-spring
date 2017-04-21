@@ -13,7 +13,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"au.amidja.web.controller"})
+@ComponentScan(basePackages = {"au.amidja.web.controller", 
+		"au.amidja.persistence.dao.impl", 
+		"au.amidja.persistence.dao.adapter"})
 public class MvcConfig  extends WebMvcConfigurerAdapter{
 			 
 	 public void addViewControllers(ViewControllerRegistry registry) {

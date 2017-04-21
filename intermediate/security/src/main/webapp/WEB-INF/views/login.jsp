@@ -36,9 +36,9 @@
 </head>
 <body onload='document.loginForm.username.focus();'>
 
-	<h1>Spring Security Custom Login Form (XML)</h1>
+	<h1>Custom Login Form</h1>
 
-	<c:url value="/login" var="logInUrl" />
+	<!--<c:url value="/login" var="logInUrl" />-->
 
 	<div id="login-box">
 
@@ -54,14 +54,22 @@
 		<form name='loginForm' action="<c:url value='/login' />" method='POST'>
 
 			<table>
-				<tr>
-					<td>User:</td>
-					<td><input type='text' name='username' value=''></td>
-				</tr>
-				<tr>
-					<td>Password:</td>
-					<td><input type='password' name='password' /></td>
-				</tr>
+				<c:if test="${empty stepup || stepup != true}">			
+					<tr>
+						<td>User:</td>
+						<td><input type='text' name='username' value=''></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type='password' name='password' /></td>
+					</tr>
+				</c:if>	
+				<c:if test="${stepup}">				
+					<tr>
+						<td>Verification Code</td>
+						<td><input type='text' name='code' /></td>
+					</tr>
+				</c:if>										
 				<tr>
 					<td colspan='2'><input name="submit" type="submit"
 						value="submit" /></td>
@@ -69,7 +77,6 @@
 			</table>
 
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-
 		</form>
 	</div>
 

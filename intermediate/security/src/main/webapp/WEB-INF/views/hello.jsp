@@ -6,7 +6,7 @@
 	<h1>Message : ${message}</h1>
 
 	<h2>
-		<a href="<c:url value="/admin" />">... authenticate</a>
+		<a href="<c:url value="/admin" />">... admin page</a>
 	</h2>
 
 </body>

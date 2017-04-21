@@ -16,7 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 public class AuthenticationDemo {
 
-	private static AuthenticationManager am = new SampleAuthenticationManager();
+	private static SampleAuthenticationManager am = new SampleAuthenticationManager();
 
 	public static void main(String[] args) throws Exception {
 
