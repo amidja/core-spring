@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:p="http://www.springframework.org/schema/p"
+		xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:jdbc="http://www.springframework.org/schema/jdbc"      
+		
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/jdbc 
+                           http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+		   
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    
+    <bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+		p:dataSource-ref="testEmbeddedDataSource">
+   
+        <property name="jpaVendorAdapter"> 
+        	<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </property>
+        <property name="jpaProperties">
+            <props>
+				<prop key="openjpa.jdbc.DBDictionary">org.apache.openjpa.jdbc.sql.HSQLDictionary</prop>				                				
+                <prop key="openjpa.Log">Default=TRACE, Runtime=TRACE</prop>
+            </props>
+        </property>
+    </bean>
+        
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+		p:entityManagerFactory-ref="entityManagerFactory" />		
+                   
+	<jdbc:embedded-database id="testEmbeddedDataSource" type="HSQL">
+    	<jdbc:script location="classpath:/db/create-testDb.sql" />
+    	<jdbc:script location="classpath:/db/insert-testData.sql" />
+	</jdbc:embedded-database>
+     
+</beans>

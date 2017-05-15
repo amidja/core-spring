@@ -1,0 +1,38 @@
+@CHARSET "ISO-8859-1";
+
+div#footer hr {
+	border-width: 1px 0 0 0;
+	color: #eee;
+	height: 1px;
+}
+
+div#footer dl {
+	display: span;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div#footer dt {
+	clear: left;
+	display: inline-block;
+	float: none;
+	width: 10em;
+}
+
+div#footer dd {
+	float: left;
+	margin-left: 0;
+	width: 20em;
+}
+
+div#footer .left {
+	float: left;
+}
+
+div#footer .right {
+	float: right;
+}
+
+div#footer p {
+	margin: 0;
+}

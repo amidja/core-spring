@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1";
+
+div#toolbar {
+	background-image: url('../images/toolbar.png');
+}
+
+div#header h1 {
+	clear: both;
+}
+
+div#navigation {
+	list-style-type: none;
+	height: 2.5em;
+	margin-top: 0;
+	padding: 0;
+}
+
+div#navigation a {
+	color: #fff;
+	float: left;
+	font-family: helvetica;
+	font-size: 0.9em;
+	font-weight: bold;
+	padding: 0.85em 1em;
+	text-decoration: none;
+}
+
+div#navigation a:hover {
+	background-color: #fff;
+	color: #333;
+}

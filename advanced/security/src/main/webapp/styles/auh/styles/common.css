@@ -1,0 +1,22 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background-image: url('../images/thatch.png');
+	font-family: helvetica, arial, sans-serif;
+	margin: 0;
+}
+
+h1 {
+	font-family: arial;
+	font-size: 2em;
+}
+
+div#navigation, div#content, div#footer, h1#title {
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+}
+
+div.buttons {
+	margin-top: 1em;
+}

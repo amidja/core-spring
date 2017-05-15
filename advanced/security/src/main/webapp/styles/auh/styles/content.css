@@ -1,0 +1,72 @@
+@CHARSET "ISO-8859-1";
+
+div#content {
+	
+}
+
+div#content > ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+div#content > ul a {
+	color: #369;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div#content > ul a:visited {
+	color: #036;
+}
+
+div#content > ul a:hover {
+	color: #9cf;
+}
+
+form > div {
+	margin: 0 0 1em 0;
+}
+
+fieldset {
+	background-color: #eee;
+	border: 1px solid #aaa;
+	margin: 0 0 1em 0;
+	padding: 1em;
+}
+
+label {
+	display: inline-block;
+	width: 15em;
+}
+
+label.default {
+	width: auto;	
+}
+
+input {
+	margin: 0 0.25em 0.25em 0;
+	padding: 0.325em;
+	width: 15em;
+}
+
+button {
+	margin-right: 0.25em;
+	padding: 0.25em;
+	width: 7.75em;
+}
+
+input, button {
+	border: 1px solid #888;
+	font-family: helvetica;
+	font-size: 0.8em;
+}
+
+p.result span {
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+p.result span.result {
+	font-style: italic;
+	font-weight: normal; 
+}
