@@ -1,6 +1,7 @@
 package au.amidja.core.security;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.jboss.aerogear.security.otp.Totp;
 import org.slf4j.Logger;
@@ -59,11 +60,14 @@ public class VerificationCodeAuthenticationProvider extends AbstractUserDetailsA
 	        //if (isValidLong(verificationCode) && totp.verify(verificationCode)) {
 			if (totp.verify(verificationCode)) {
 	        	LOG.debug(" ... verification code [{}] in AuthenticationToke is valid", authentication.getCredentials());
-				//Add ADMIN _ROLE to users that are using 2FA
-	        	List<GrantedAuthority> userAuthorities = (List) userDetails.getAuthorities();
-	        	userAuthorities.add(new SimpleGrantedAuthority(SystemRoleType.ROLE_ADMIN.name()));
-				return new VerificationCodeAuthenticationToken(authentication.getPrincipal(), authentication.getCredentials(),
-						userAuthorities);
+				//Add ADMIN _ROLE to users that are using 2FA and has provided valid 2FA
+	        	Set<GrantedAuthority> userAuthorities = new HashSet<GrantedAuthority>();
+	        	for (GrantedAuthority authority : userDetails.getAuthorities()){
+	        		userAuthorities.add(authority);
+	        	}
+	        	
+	        	userAuthorities.add(new SimpleGrantedAuthority(SystemRoleType.ROLE_ADMIN.name()));	        	
+				return new VerificationCodeAuthenticationToken(authentication.getPrincipal(), authentication.getCredentials(), userAuthorities);
 	        }
 		}
 					

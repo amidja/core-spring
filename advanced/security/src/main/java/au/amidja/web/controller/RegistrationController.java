@@ -32,6 +32,7 @@ public class RegistrationController {
 		LOG.debug("in registration controller for [{}]", authentication.getName());
 			
 		String qrUrl = null; 
+		
 		try{
 			qrUrl= userService.generateQRUrl(authentication.getName());
 			LOG.debug("in registration controller, qrUrl [{}]", qrUrl);
@@ -41,8 +42,7 @@ public class RegistrationController {
 		
 		SystemUser systemUser = systemUserReadDao.findByUserName(authentication.getName());
 		
-		
-		
+	
 		ModelAndView model = new ModelAndView();
 		model.addObject("title", "Spring Security");
 		model.addObject("message", "This is protected registration page!");		

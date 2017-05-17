@@ -1,7 +1,7 @@
 package au.amidja.dao.persistence.impl;
 
 import org.hamcrest.core.IsEqual;
-import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -29,11 +29,11 @@ public class SystemUserReadJpaDaoTest {
 		
 		LOG.debug("... in testfindByUserId [{}] ", Integer.valueOf(userId));		
 		SystemUser systemUser = systemUserReadDao.findByUserId(Integer.valueOf(userId));
-		Assert.assertNotNull(systemUser);
-		Assert.assertThat(systemUser.getId(), IsEqual.equalTo(userId));
-		Assert.assertNotNull(systemUser.getSystemRoles());
-		Assert.assertTrue(systemUser.isUsing2FA());
-		LOG.debug("System User [{}] has [{}] roles ", systemUser.getId(), systemUser.getSystemRoles().size());
+		assertNotNull(systemUser);
+		assertThat(systemUser.getId(), IsEqual.equalTo(userId));
+		assertNotNull(systemUser.getSystemRoles());
+		assertTrue(systemUser.isUsing2FA());
+		LOG.debug("System User [{}] has [{}] roles ", systemUser.getUserName(), systemUser.getSystemRoles().size());
 		for (SystemRole role: systemUser.getSystemRoles()){
 			LOG.debug("System User [{}] has role [{}]", systemUser.getId(), role.getRole());
 		}

@@ -1,4 +1,4 @@
-kinsert into SYSTEM_USER(USER_ID, USER_NAME, PASSWORD, FIRST_NM, LAST_NM, USING_2FA, OTP_CODE) 
+insert into SYSTEM_USER(USER_ID, USER_NAME, PASSWORD, FIRST_NM, LAST_NM, USING_2FA, OTP_CODE) 
 	values ( 001, 'admin', 'admin', 'Jasmin', 'Amidzic', true, 'A002');
 insert into SYSTEM_USER(USER_ID, USER_NAME, PASSWORD, FIRST_NM, LAST_NM, USING_2FA, OTP_CODE) 
 	values ( 002, 'amidja', 'amidja', 'Jasmin', 'Amidzic', true, 'A001');

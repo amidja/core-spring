@@ -61,6 +61,6 @@ public class SystemRole implements java.io.Serializable{
  	
 	@PostLoad
 	public void postLoad(){
-		LOG.debug("Loaded systemRole with id [{}]", getId());
+		//LOG.debug("Loaded systemRole with id [{}]", getId());
 	}
 }

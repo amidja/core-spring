@@ -41,7 +41,7 @@ public class SystemUser implements java.io.Serializable{
 	
 	public SystemUser() {
 		super();		
-		LOG.debug("Creating new systemUser wiht id [{}], username [{}] ", getId(), getUserName());
+		LOG.debug("Creating new systemUser wiht id [{}] ", getId());
 	}
 
 	public SystemUser(int id, String firstName, String lastName) {
@@ -62,7 +62,7 @@ public class SystemUser implements java.io.Serializable{
 	}
 	
 	
-	@Column(name="USER_NAME", unique=true, nullable=false)
+	@Column(name="USER_NAME", unique=true, nullable=false, updatable=false)
 	public String getUserName() {
 		return userName;
 	}
@@ -104,12 +104,7 @@ public class SystemUser implements java.io.Serializable{
 	}
 
 	public void setUsing2FA(Boolean isUsing2FA) {
-		this.isUsing2FA = isUsing2FA;
-		if (isUsing2FA ){			
-			getSecret();
-		}else{
-			setSecret(null);
-		}
+		this.isUsing2FA = isUsing2FA;		
 	}
 
 	@Column(name="OTP_CODE", unique=false,  nullable=true, length=50)
@@ -124,13 +119,13 @@ public class SystemUser implements java.io.Serializable{
 
 	@Column(name="SECRET", unique=false,  nullable=true, length=50)
 	public String getSecret() {		
-		LOG.debug("retrieved secret [{}] for systemUser [{}]", this.secret,  getUserName());
+		//LOG.debug("retrieved secret [{}] for systemUser [{}]", this.secret,  getUserName());
 		return this.secret;
 	}
 	
 	public void setSecret(String secret) {
 		this.secret = secret;
-		LOG.debug("stored secret [{}] for systemUser [{}]", secret, getUserName());
+		LOG.debug("stored secret [{}] for user [{}]", secret, getId());
 	}
 
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
@@ -148,7 +143,10 @@ public class SystemUser implements java.io.Serializable{
 
 	@PostLoad
 	public void postLoad(){
-		LOG.debug("Loaded systemUser with id [{}]", getId());
+		LOG.debug("Loaded systemUser with id [{}], and userName [{}] and secret [{}]", getId(), getUserName(), getSecret());
+		for (SystemRole sysRole : getSystemRoles()){
+			LOG.debug("Loaded systemRole with id [{}], for [{}]", sysRole.getRole(), getUserName());
+		}
 	}
 	
 }

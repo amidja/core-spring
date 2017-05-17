@@ -44,7 +44,7 @@ public class UserServiceImpl implements IUserService{
 
 
 	@Override
-	@Transactional(readOnly=false)
+	@Transactional(readOnly=false )
 	public boolean registerFor2FA(String userName) {
 		
 		SystemUser systemUser = systemUserReadDao.findByUserName(userName);
