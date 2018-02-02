@@ -1,10 +1,10 @@
-package au.amidja.core.java.di.consumer.injector;
+package au.amidja.core.java.di.consumer.factory;
 
 import au.amidja.core.di.consumer.Consumer;
 import au.amidja.core.di.service.EmailServiceImpl;
 import au.amidja.core.java.di.consumer.MessageConsumer;
 
-public class EmailServiceInjector implements MessageServiceInjector{
+public class EmailServiceFactory implements MessageServiceFactory{
 	
 	@Override
 	public Consumer getConsumer() {

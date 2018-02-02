@@ -14,7 +14,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-public class AuthenticationDemo {
+public class AuthenticationManagerDemo {
 
 	private static SampleAuthenticationManager am = new SampleAuthenticationManager();
 
@@ -29,7 +29,6 @@ public class AuthenticationDemo {
 			String password = in.readLine();
 
 			try {
-
 				Authentication request = new UsernamePasswordAuthenticationToken(name, password);
 				Authentication result = am.authenticate(request);
 				SecurityContextHolder.getContext().setAuthentication(result);
@@ -44,6 +43,7 @@ public class AuthenticationDemo {
 	}
 }
 
+//It will return UsernamePasswordAuthenticationToken if provided username and password are the same.
 class SampleAuthenticationManager implements AuthenticationManager {
 	static final List<GrantedAuthority> AUTHORITIES = new ArrayList<GrantedAuthority>();
 

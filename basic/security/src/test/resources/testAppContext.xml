@@ -6,7 +6,4 @@
 	<bean id="messageService" class="au.amidja.core.di.service.TwitterServiceImpl"/>
 	<bean id="messageConsumer" class="au.amidja.core.spring.di.consumer.MessageConsumer"/>
 	
-
-		
-		
 </beans>

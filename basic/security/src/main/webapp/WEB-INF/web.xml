@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
-	<display-name>Hub Test WebApp</display-name>
+	<display-name>My Test WebApp</display-name>
 
 	<!-- The master configuration file for this Spring web application -->
 	<context-param>

@@ -1,4 +1,4 @@
-package au.amidja.core.java.di.consumer.injector;
+package au.amidja.core.java.di.consumer.factory;
 
 import au.amidja.core.di.consumer.Consumer;
 
@@ -9,16 +9,16 @@ public class DemoApp {
 		String email = "boboj@abc.com";
 		String phone = "4088888888";
 		
-		MessageServiceInjector injector = null;
+		MessageServiceFactory injector = null;
 		Consumer app = null;
 		
 		//Send email
-		injector = new EmailServiceInjector();
+		injector = new EmailServiceFactory();
 		app = injector.getConsumer();
 		app.processMessage(msg, email);
 		
 		//Send SMS
-		injector = new SMSServiceInjector();
+		injector = new SMSServiceFactory();
 		app = injector.getConsumer();
 		app.processMessage(msg, phone);
 	}

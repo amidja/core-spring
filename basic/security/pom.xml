@@ -11,7 +11,7 @@
 
 	<artifactId>basic-security</artifactId>
 	<groupId>au.amidja.core.spring.security</groupId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Spring Basic - Security</name>
 
@@ -113,21 +113,13 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 					<compilerArgument>-Xlint:all</compilerArgument>
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.2.1</version>
-				<configuration>
-					<mainClass>org.springframework.integration.samples.amqp.Main</mainClass>
-				</configuration>
-			</plugin>
+			</plugin>			
 		</plugins>
 	</build>
 

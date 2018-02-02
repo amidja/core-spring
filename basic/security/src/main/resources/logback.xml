@@ -19,6 +19,7 @@
 	<logger name="org.springframework" level="INFO" />	
 	<logger name="org.springframework.webflow" level="DEBUG" />
 	<logger name="au.gov.australia.itsecurity.oauth.examples" level="DEBUG" />
+	
 	<root level="WARN">
 		<appender-ref ref="RootConsoleAppender" />
 	</root>	
