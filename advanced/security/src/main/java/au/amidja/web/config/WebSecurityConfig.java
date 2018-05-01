@@ -79,8 +79,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	CustomWebAuthenticationDetailsSource getAuthenticationDetailsSource(){
 		return new CustomWebAuthenticationDetailsSource();
-	}
-	
+	}	
 	
 	@Bean
 	AuthenticationProvider userNamePasswordAuthProvider() {

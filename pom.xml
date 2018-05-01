@@ -9,9 +9,11 @@
 	<name>Spring Samples Root</name>	
 	<packaging>pom</packaging>
 
+	<!-- 
 	<prerequisites>
 		<maven>3.0.5</maven>
 	</prerequisites>
+	 -->
 	
 	<modules>
 		<module>basic</module>		

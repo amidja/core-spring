@@ -1,9 +1,7 @@
-Java DI Design Pattern 
+Java Spring Based RestFul service  
 ================================
 
 # Overview
-
-Java DI design pattern allow us to remove  the hard-coded dependencies making app loosely coupled, extendable and maintainable. 
 
 
 # How to Run the Sample
@@ -11,7 +9,7 @@ Java DI design pattern allow us to remove  the hard-coded dependencies making ap
 
 # Used components
 
-http://www.journaldev.com/2394/java-dependency-injection-design-pattern-example-tutorial
+
 
 # Resources
 
